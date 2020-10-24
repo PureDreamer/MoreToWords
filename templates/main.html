@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://moretowords.netlify.app/ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoreToWords</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1><a href="/">MoreToWords</a></h1>
+            <a href="/about">About Us</a>
+        </header>
+        <div id="explaining">
+            <p>This website is all about words.<br>
+                Type in a word of your choice, tick what parameter you want to learn about it and you can see
+                it!<br>
+                For example the word can be mother and the parameter will be semantic field.<br>
+                the expected result will be 0.</p>
+            <form action="/" method="post" id="form1">
+                <input type="text" name="search" placeholder="search word e.g. mother" id="search">
+                <select name="searchby" id="searchby">
+                    <option value="Semantic Field">Semantic Field</option>
+                    <option value="Etymology">Etymology</option>
+                    <option value="Palindrome">Palindrome</option>
+                    <option value="Synonyms">Synonyms</option>
+                </select>
+            </form>
+            <button class="btn-primary" type="submit" form="form1" value="Submit">Search it</button>
+            <footer>
+
+                <p>MoreToWords</p>
+
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

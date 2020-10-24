@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://moretowords.netlify.app/onechoice.html -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoreToWords {{search}} </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesone.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">MoreToWords</a></h1>
+        <a href="/about">About Us</a>
+    </header>
+    <div class=results_one>
+        <div class=container>
+            <div style="text-align: center;">{{search}}</div>
+            <form action="/" method="POST">
+                <input autofocus=autofocus type="text" name="search" placeholder="{{ search }}">
+                <select name="searchby" id="searchby">
+                    <option value="Semantic Field">Semantic Field</option>
+                    <option value="Etymology">Etymology</option>
+                    <option value="Palindrome">Palindrome</option>
+                    <option value="Synonyms">Synonyms</option>
+                </select>
+            </form>
+            <img src="{{img_search}}" alt="{{search}}" title="{{search}}">
+            <div class=whitebox>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">short explaining</th>
+                            <th scope="col">{{searchby}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align:top">{{short_def}}</td>
+                            <td style="text-align: center;">{{search_check}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+        <p>MoreToWords</p>
+
+    </footer>
+</body>
+
+</html>
