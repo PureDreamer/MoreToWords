@@ -3,8 +3,7 @@ import os
 import ety
 from flask import Flask, render_template, request
 from mediawiki import DisambiguationError, MediaWiki
-from polyglot.downloader import downloader
-from polyglot.text import Text
+from textblob import TextBlob
 from PyDictionary import PyDictionary
 from pyunsplash import PyUnsplash
 
@@ -15,9 +14,9 @@ def first_one(img_search):
 
 
 def polari_check(search):
-    search = Text(search)
+    search = TextBlob(search)
     try:
-        return search.polarity
+        return search.sentiment.polarity
     except ValueError:
         return "cant find polarity"
 
