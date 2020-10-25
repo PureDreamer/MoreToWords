@@ -3,9 +3,9 @@ import os
 import ety
 from flask import Flask, render_template, request
 from mediawiki import DisambiguationError, MediaWiki
-from textblob import TextBlob
 from PyDictionary import PyDictionary
 from pyunsplash import PyUnsplash
+from textblob import TextBlob
 
 
 def first_one(img_search):
@@ -74,6 +74,8 @@ def palindrome(search):
 
 app = Flask(__name__)
 app.static_folder = 'static'
+
+
 @app.route("/", methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
